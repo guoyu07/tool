@@ -1,0 +1,14 @@
+{
+    "name": "pakey/tool",
+    "description": "pakey的包",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "pakey",
+            "email": "pakey@qq.com"
+        }
+    ],
+    "require": {
+        "php":">=5.5.0",
+    },
+}
