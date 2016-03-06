@@ -13,7 +13,7 @@ class Url{
      */
     public static function weixin()
     {
-        $url=self::this();
+        $url=self::current();
         if(strpos($url,'#')){
             $url=explode('#',$url)['0'];
         }
@@ -31,12 +31,8 @@ class Url{
             && $_SERVER['HTTPS'] !== 'off'
             || $_SERVER['SERVER_PORT'] === 443) ? 'https://' : 'http://';
 
-        if(isset($_SERVER['HTTP_X_FORWARDED_HOST'])){
-            $host = $_SERVER['HTTP_X_FORWARDED_HOST'];
-        }else{
-            $host = $_SERVER['HTTP_HOST'];
-        }
-        $url=$protocol.$host.$_SERVER['REQUEST_URI'];
-        return $url;
+        $host=isset($_SERVER['HTTP_X_FORWARDED_HOST'])?$_SERVER['HTTP_X_FORWARDED_HOST']:$_SERVER['HTTP_HOST'];
+        $uri=isset($_SERVER['HTTP_X_REAL_URI'])?$_SERVER['HTTP_X_REAL_URI']:$_SERVER['REQUEST_URI'];
+        return $protocol.$host.$uri;
     }
 }
