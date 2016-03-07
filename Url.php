@@ -1,4 +1,7 @@
 <?php
+/**
+ *
+ */
 namespace pakey\tool;
 /**
  * Class Tool_Url
