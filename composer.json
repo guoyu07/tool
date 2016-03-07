@@ -1,6 +1,7 @@
 {
     "name": "pakey/tool",
     "description": "pakey自用常用工具包",
+    "homepage": "https://github.com/pakey/tool",
     "license": "MIT",
     "authors": [
         {
